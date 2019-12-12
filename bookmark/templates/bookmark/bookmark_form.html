@@ -1,0 +1,11 @@
+{% extends 'Base.html' %} <!-- 상속을 받겠다 -->
+
+{% block title %} 등록 {% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="등록" class="btn btn-info">
+    </form>
+{% endblock %}

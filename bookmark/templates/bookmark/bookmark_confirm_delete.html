@@ -1,0 +1,22 @@
+{% extends 'Base.html' %} <!-- 상속을 받겠다 -->
+
+{% block title %} 리스트{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-danger col">
+            삭제하시겠습니까?
+     </div>
+     <form action="" method="post">
+        {% csrf_token %}
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">{{ object.site_name }}</label>
+            <div class="col-sm-10">
+             <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ object.url }}">
+            </div>
+        </div>
+        <input type="submit" value="삭제" class="btn btn-danger">
+    </form>
+</div>
+{% endblock %}
+
